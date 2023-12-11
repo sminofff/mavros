@@ -108,7 +108,7 @@ public:
 
     uas->diagnostic_updater.add("GPS", this, &GlobalPositionPlugin::gps_diag_run);
 
-    auto sensor_qos = rclcpp::SensorDataQoS();
+    auto sensor_qos = rclcpp::SystemDefaultsQoS();
 
     // gps data
     raw_fix_pub = node->create_publisher<sensor_msgs::msg::NavSatFix>("~/raw/fix", sensor_qos);
